@@ -1,0 +1,109 @@
+
+.canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  padding: 100px 50px;
+}
+
+.toolbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.node-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.node-card {
+  width: 200px;
+  background: white;
+  border: 2px solid #334155;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  position: relative;
+  z-index: 10;
+}
+
+/* Node Types [cite: 30] */
+.node-card.branch { border-color: #3b82f6; border-style: dashed; }
+.node-card.end { border-color: #ef4444; background-color: #fff1f2; }
+
+.node-input {
+  width: 100%;
+  border: none;
+  font-weight: bold;
+  text-align: center;
+  outline: none;
+  margin-bottom: 5px;
+}
+
+.node-type-label {
+  font-size: 10px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* Connection Lines  */
+.line-vertical {
+  width: 2px;
+  height: 40px;
+  background: #cbd5e1;
+}
+
+.children-container {
+  display: flex;
+  gap: 40px;
+  padding-top: 40px;
+  position: relative;
+}
+
+/* Horizontal line for branches */
+.children-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50px;
+  right: 50px;
+  height: 2px;
+  background: #cbd5e1;
+}
+
+.node-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+}
+
+.btn-add {
+  font-size: 10px;
+  padding: 4px 8px;
+  cursor: pointer;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  background: #f8fafc;
+}
+
+.btn-add:hover { background: #e2e8f0; }
+
+.btn-del {
+  color: #ef4444;
+  border-color: #fecaca;
+}
