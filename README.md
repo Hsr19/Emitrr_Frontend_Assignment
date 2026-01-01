@@ -1,16 +1,35 @@
-# React + Vite
+# Workflow Builder UI - Frontend Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A complex, interactive workflow builder built with React. This application allows users to design dynamic logical flows using a visual tree-based interface.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
+**Link:** [https://emitrr-frontend-assignment.vercel.app/](https://emitrr-frontend-assignment.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack & Architecture
+- **React (Vite)**: Utilized functional components and custom hooks for reactive state management.
+- **Pure CSS**: All layouts, connection lines, and transitions are built using native CSS (Flexbox/Absolute positioning) to meet the "No UI Library" requirement.
+- **Recursive Data Modeling**: Designed a scalable JSON/JavaScript tree structure to represent complex hierarchies of nodes and branches.
 
-## React Compiler
+## ✨ Core Features
+- **Node Types**: 
+  - **Action**: A single sequential task.
+  - **Branch**: A decision point with multiple outgoing paths (e.g., True/False).
+  - **End**: Terminal point of a workflow.
+- **Dynamic Interactions**:
+  - Add nodes at any point in the flow.
+  - Edit node titles/labels in real-time.
+  - **Smart Deletion**: When a node is deleted, its parent automatically reconnects to its direct children to maintain a continuous flow.
+- **Bonus Implementation**:
+  - **State History (Undo)**: Implemented a history stack to allow users to revert structural changes.
+  - **Data Export**: A "Save to Console" feature that logs the current workflow JSON structure for debugging or persistence.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📁 Project Structure
+- `src/App.jsx`: Main state controller and logic for tree manipulation.
+- `src/components/Node.jsx`: A recursive component that renders the tree structure infinitely deep.
+- `src/App.css`: Custom styling for node representation and connection lines.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚙️ Local Setup
+1. Clone the repository: `git clone https://github.com/Hsr19/Emitrr_Frontend_Assignment.git`
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`
+4. Build for production: `npm run build`
